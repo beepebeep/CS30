@@ -3,14 +3,14 @@ package file;
 import java.io.File;
 import java.util.Scanner;
 
-public class MyFile {
+public class MyFile_1 {
 
 	private static Scanner i = new Scanner(System.in);	
 	private static String fileName;
 	
 	public static void checkFile()
 	{
-		System.out.print("Enter a file name: ");
+		System.out.print("Enter a file name (try 'hello.txt'): ");
 		fileName = i.nextLine();
 		
 		File f = new File(fileName);
