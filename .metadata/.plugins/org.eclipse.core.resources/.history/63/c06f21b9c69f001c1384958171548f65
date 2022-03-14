@@ -1,0 +1,26 @@
+package university;
+
+public class Staff extends UEmployee
+{
+	String jobTitle;
+	
+	public Staff(String jobT, String n, double s)
+	{
+		super(n, s);
+	}
+	
+	public String getTitle()
+	{
+		return jobTitle;
+	}
+	
+	public String toString()
+	{
+		String staffString;
+		
+		staffString = super.toString();
+		staffString += " They are part of the staff and their job title is " + getTitle() + ".";
+		
+		return staffString;
+	}
+}

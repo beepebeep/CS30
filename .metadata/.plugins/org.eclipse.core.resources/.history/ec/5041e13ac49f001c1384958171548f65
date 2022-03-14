@@ -1,0 +1,17 @@
+package university;
+
+public class Staff extends UEmployee
+{
+	String jobTitle;
+	
+	public Staff(String jobT, String n, double s)
+	{
+		super(n, s);
+	}
+	public String getTitle()
+	{
+		return jobTitle;
+	}
+	
+
+}

@@ -1,0 +1,24 @@
+package university;
+
+public class UEmployee 
+{
+	String employeeName;
+	Double salary;
+	
+	public UEmployee(String n, Double s)
+	{
+		employeeName = n;
+		salary = s;
+	}
+	
+	public String getName()
+	{
+		return employeeName;
+	}
+
+	public Double getSalary()
+	{
+		return salary;
+	}
+	
+}

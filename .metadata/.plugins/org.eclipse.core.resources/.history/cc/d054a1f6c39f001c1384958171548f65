@@ -1,0 +1,17 @@
+package university;
+
+public class Faculty extends UEmployee 
+{
+	String departmentName;
+	
+	public Faculty(String depName, String n, Double s)
+	{
+		super(n, s);
+	}
+	public String getDepName()
+	{
+		return departmentName;
+	}
+	
+	
+}
