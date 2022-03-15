@@ -1,9 +1,0 @@
-package vehicle;
-
-public class Minivan {
-
-	public Minivan() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
