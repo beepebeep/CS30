@@ -2,6 +2,10 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="PersonalAcct"/>
     <fullyQualifiedTypeName name="javax.management.remote.SubjectDelegationPermission"/>
-    <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
