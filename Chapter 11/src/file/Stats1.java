@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Stats {
+public class Stats1 {
 
 	static File f = new File("test1.dat");
 	static FileReader in;
