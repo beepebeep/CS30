@@ -17,7 +17,7 @@ public class Stats2 {
 	static BufferedWriter writeF;
 	private static int i = 0;
 	private static double average, g1, g2, g3, g4, max, min, grade;
-	private static String[] info = new String[8];
+	private static String[] info = new String[8]; 
 	private static String n, student;
 	private static Scanner s = new Scanner(System.in);	
 	
@@ -46,14 +46,17 @@ public class Stats2 {
 				writeF.write(Double.toString(grade));
 				writeF.newLine();
 			}
+			
+			writeF.close();
+			out.close();
+			System.out.println("Data written to file\n");
 		}
 		catch(IOException e)
 		{
 			System.out.println("Error");
 		}
 		
-		i = 0;
-		//getInfo();
+		getInfo();
 	}
 	
 	public static void getInfo()
@@ -62,40 +65,44 @@ public class Stats2 {
 		{
 			in = new FileReader(f);
 			readF = new BufferedReader(in);
-			
+			int o = 0;
 			while((n = readF.readLine()) != null)
 			{
-				info[i] = n;
-				i += 1;
+				info[o] = n;
+				
+				if (o % 2 == 0)
+				{
+					System.out.println(info[o].toString());
+				}
+				else
+				{
+					System.out.println("Grade: " + info[o].toString() + "%");
+				}
+				o += 1;
 			}
 		}
 		catch (IOException e)
 		{
 			System.out.println("Error");
-		}
-		
-		
-		System.out.println(info[0].toString() + "\n Grade: " + info[1].toString() + "%");
-		System.out.println("\n" + info[2].toString() + "\n Grade: " + info[3].toString() + "%");
-		System.out.println("\n" + info[4].toString() + "\n Grade: " + info[5].toString() + "%");
-		System.out.println("\n" + info[6].toString() + "\n Grade: " + info[7].toString() + "%");
+		}		
 		
 		calculateAve();
 	} 
 	
 	
 	public static void calculateAve()
-	{
-		g1 = Double.parseDouble(info[1].toString());
-		g2 = Double.parseDouble(info[3].toString());
-		g3 = Double.parseDouble(info[5].toString());
-		g4 = Double.parseDouble(info[7].toString());
-		
-		average =  (g1 + g2 + g3 + g4) / 4;
+	{	
+		int o = 0;
+		while (o % 2 == 0 )
+		System.out.println(info[1]);
+		System.out.println(info[3]);
+		System.out.println(info[5]);
+		System.out.println("average: " + average);
+		average = average / i;
 		
 		System.out.println("\nAverage = " + average + "%");
 		
-		high();
+		//high();
 	}
 	
 	public static void high()
