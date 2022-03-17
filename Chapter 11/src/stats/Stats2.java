@@ -16,9 +16,9 @@ public class Stats2 {
 	static BufferedReader readF;
 	static BufferedWriter writeF;
 	private static int i = 0;
-	private static double average, g1, g2, g3, g4, max, min , w1, w2, w3 , w4;
+	private static double average, g1, g2, g3, g4, max, min, grade;
 	private static String[] info = new String[8];
-	private static String n, s1, s2, s3, s4;
+	private static String n, student;
 	private static Scanner s = new Scanner(System.in);	
 	
 	
@@ -30,67 +30,29 @@ public class Stats2 {
 			out = new FileWriter(f);
 			writeF = new BufferedWriter(out);
 			
-			System.out.print("Enter the name of the first student: ");
-			s1 = s.nextLine();
+			System.out.print("How many students' info do you want to enter?: ");
+			i = s.nextInt();
 			
-			
-			System.out.print("Enter their grade: ");
-			w1 = s.nextDouble();
-			
-			
-			System.out.print("\nEnter the name of the second student: ");
-			s1 = s.nextLine();
-			
-			
-			System.out.print("Enter their grade: ");
-			w2 = s.nextDouble();
-			
-			
-			System.out.print("\nEnter the name of the third student: ");
-			s1 = s.nextLine();
-
-			
-			System.out.print("Enter their grade: ");
-			w3 = s.nextDouble();
-			
-			
-			System.out.print("\nEnter the name of the fourth student: ");
-			s1 = s.nextLine();
-			
-			
-			System.out.print("Enter their grade: ");
-			w4 = s.nextDouble();
-			
-			
-			System.out.println(s1 + " " + w1 + " " + s2 + " " + w2 + " " + s3 + " " + w3 + " " + s4 + " " + w4);
-			
-			/*writeF.write(s1);
-			writeF.newLine();
-			writeF.write(String.valueOf(w1));
-			writeF.newLine();
-			
-			writeF.write(s2);
-			writeF.newLine();
-			writeF.write(String.valueOf(w2));
-			writeF.newLine();
-			
-			writeF.write(s3);
-			writeF.newLine();
-			writeF.write(String.valueOf(w3));
-			writeF.newLine();
-			
-			writeF.write(s4);
-			writeF.newLine();
-			writeF.write(String.valueOf(w4));*/
-			
+			for (int o = 0; o < i; o++)
+			{
+				System.out.print("Enter student name: ");
+				student = s.next();
+				
+				System.out.print("Enter grade: ");
+				grade = s.nextDouble();
+				
+				writeF.write(student);
+				writeF.newLine();
+				writeF.write(Double.toString(grade));
+				writeF.newLine();
+			}
 		}
 		catch(IOException e)
 		{
 			System.out.println("Error");
 		}
 		
-		
-		
+		i = 0;
 		//getInfo();
 	}
 	
