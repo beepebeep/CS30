@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Stats2 {
@@ -17,9 +19,11 @@ public class Stats2 {
 	static BufferedWriter writeF;
 	private static int i = 0;
 	private static double average, g1, g2, g3, g4, max, min, grade;
-	private static String[] info = new String[8]; 
+	private static String[] info = new String[20]; 
+	private static Double[] scores = new Double[20];
 	private static String n, student;
 	private static Scanner s = new Scanner(System.in);	
+	private static DecimalFormat dc = new DecimalFormat("0.00");
 	
 	
 	public static void write()
@@ -38,12 +42,12 @@ public class Stats2 {
 				System.out.print("Enter student name: ");
 				student = s.next();
 				
-				System.out.print("Enter grade: ");
+				System.out.print("Enter Score: ");
 				grade = s.nextDouble();
 				
 				writeF.write(student);
 				writeF.newLine();
-				writeF.write(Double.toString(grade));
+				writeF.write(dc.format(grade));
 				writeF.newLine();
 			}
 			
@@ -76,7 +80,7 @@ public class Stats2 {
 				}
 				else
 				{
-					System.out.println("Grade: " + info[o].toString() + "%");
+					System.out.println("Score: " + dc.format(Double.parseDouble(info[o])) + "%");
 				}
 				o += 1;
 			}
@@ -93,37 +97,37 @@ public class Stats2 {
 	public static void calculateAve()
 	{	
 		int o = 0;
-		while (o % 2 == 0 )
-		System.out.println(info[1]);
-		System.out.println(info[3]);
-		System.out.println(info[5]);
-		System.out.println("average: " + average);
+		int u = 0;
+		
+		while (info[o] != null)
+		{
+			if(o % 2 == 0)
+			{
+				o++;
+			}
+			else
+			{
+				average += Double.parseDouble(info[o]);
+				scores[u] = Double.parseDouble(info[o]);
+				System.out.println(Array.getDouble(scores, u));
+				u++;
+				o++;
+			}
+		}
 		average = average / i;
 		
-		System.out.println("\nAverage = " + average + "%");
+		System.out.println("\nAverage = " + dc.format(average) + "%");
 		
-		//high();
+		high();
 	}
 	
 	public static void high()
 	{
+		for (int o = 0; o < i; o++)
+		{
+			System.out.println(scores[o]);
+		}
 		
-		if (g1 > g2 && g1 > g3 && g1 > g4)
-		{
-			max = g1;
-		}
-		else if(g2 > g1 && g2 > g3 && g2 > g4)
-		{
-			max = g2;
-		}
-		else if(g3 > g1 && g3 > g2 && g3 > g4)
-		{
-			max = g3;
-		}
-		else if(g4 > g1 && g4 > g2 && g4 > g3)
-		{
-			max = g4;
-		}
 		
 		System.out.println("Highest Grade = " + max + "%");
 		
