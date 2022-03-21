@@ -18,7 +18,7 @@ public class Stats2 {
 	static BufferedReader readF;
 	static BufferedWriter writeF;
 	private static int i = 0;
-	private static double average, g1, g2, g3, g4, max, min, grade;
+	private static double average, max, min, grade;
 	private static String[] info = new String[20]; 
 	private static Double[] scores = new Double[20];
 	private static String n, student;
@@ -34,7 +34,7 @@ public class Stats2 {
 			out = new FileWriter(f);
 			writeF = new BufferedWriter(out);
 			
-			System.out.print("How many students' info do you want to enter?: ");
+			System.out.print("How many students' info do you want to enter? (max 20): ");
 			i = s.nextInt();
 			
 			for (int o = 0; o < i; o++)
