@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Stats2 {
 
@@ -53,8 +54,9 @@ public class Stats2 {
 			writeF.close();
 			out.close();
 			System.out.println("Data written to file\n");
+			TimeUnit.SECONDS.sleep(2);
 		}
-		catch(IOException e)
+		catch(IOException | InterruptedException e)
 		{
 			System.out.println("Error");
 		}
