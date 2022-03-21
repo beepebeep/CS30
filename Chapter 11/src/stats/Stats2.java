@@ -109,7 +109,6 @@ public class Stats2 {
 			{
 				average += Double.parseDouble(info[o]);
 				scores[u] = Double.parseDouble(info[o]);
-				System.out.println(Array.getDouble(scores, u));
 				u++;
 				o++;
 			}
@@ -123,42 +122,77 @@ public class Stats2 {
 	
 	public static void high()
 	{
-		for (int o = 0; o < i; o++)
+		int o = 0;
+		max = scores[0];
+		
+		while (scores[o] != null)
 		{
-			System.out.println(scores[o]);
+			if (scores[o] > max)
+			{
+				max = scores[o];
+			}
+			o++;
 		}
 		
-		
-		System.out.println("Highest Grade = " + max + "%");
+		System.out.println("Highest Grade = " + dc.format(max) + "%");
 		
 		low();
 	}
 	
 	public static void low()
 	{
-		if (g1 < g2 && g1 < g3 && g1 < g4)
+		int o = 0;
+		min = scores[0];
+		
+		while (scores[o] != null)
 		{
-			min = g1;
-		}
-		else if(g2 < g1 && g2 < g3 && g2 < g4)
-		{
-			min = g2;
-		}
-		else if(g3 < g1 && g3 < g2 && g3 < g4)
-		{
-			min = g3;
-		}
-		else if(g4 < g1 && g4 < g2 && g4 < g3)
-		{
-			min = g4;
+			if (scores[o] < min)
+			{
+				min = scores[o];
+			}
+			o++;
 		}
 		
-		System.out.println("Lowest Grade = " + min + "%");
+		System.out.println("Lowest Grade = " + dc.format(min) + "%");
 	}
 	
 	public static void main(String[] args) 
 	{
 		write();
 	}
+	
+	
+	
+	/*
+	 * Screen Dump:
+	 * 
+	 *  How many students' info do you want to enter?: 5
+		Enter student name: a
+		Enter Score: 43
+		Enter student name: b
+		Enter Score: 43
+		Enter student name: c
+		Enter Score: 66
+		Enter student name: d
+		Enter Score: 98
+		Enter student name: e
+		Enter Score: 76
+		Data written to file
+		
+		a
+		Score: 43.00%
+		b
+		Score: 43.00%
+		c
+		Score: 66.00%
+		d
+		Score: 98.00%
+		e
+		Score: 76.00%
+		
+		Average = 65.20%
+		Highest Grade = 98.00%
+		Lowest Grade = 43.00%
+	 */
 
 }
