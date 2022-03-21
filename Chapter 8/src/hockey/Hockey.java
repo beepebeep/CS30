@@ -49,3 +49,13 @@ public class Hockey {
 	}
 
 }
+
+/* Screen Dump:
+ * 
+ * 		Puck weight: 4.3
+		Puck Division: a youth division puck
+		The objects are not equal
+		puck 1 is heavier than puck 2
+		The puck has a weight of 5.3 and therefore, is a standard division puck.
+		The puck has a weight of 3.8 and therefore, is not a youth puck or a standard puck.
+ */

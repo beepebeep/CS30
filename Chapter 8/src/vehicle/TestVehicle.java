@@ -52,3 +52,27 @@ public class TestVehicle {
 	}
 
 }
+
+/* Screen Dump:
+ * 
+ * 		Enter '1' for Car, '2' for Truck, '3' for minivan: 1
+		Fuel Economy: 9 City, 8 Highway. 
+		Seating: 5
+		Cargo container type: Trunk, with a capacity of: 360.0L. Cars are typically used for point-point driving and daily use, as they are small, fuel efficient and depending on the brand, reliable.
+	
+	or:
+	
+		Enter '1' for Car, '2' for Truck, '3' for minivan: 2
+		Fuel Economy: 14 City, 12 Highway. 
+		Seating: 5
+		Cargo container type: Bed, with a capacity of: 1500.0L. Trucks are typically used for towing or carrying large loads. 
+		However, they are also very comfortable, making them good vehicles for long distance driving.
+		
+	or:
+	
+		Enter '1' for Car, '2' for Truck, '3' for minivan: 3
+		Fuel Economy: 13 City, 12 Highway. 
+		Seating: 8
+		Cargo container type: Bed, with a capacity of: 948.6L. Vans are typically used for hauling around people and their stuff. 
+		With up to 8 seats, and a roomy interior, they're great for families with many or even few children.
+*/

@@ -111,3 +111,23 @@ public class Stats1 {
 	}
 
 }
+
+/* Screen Dump:
+ * 
+ * 		Spongebob Squarepants
+ *		Grade: 85%
+ *
+ *		Patrick Star
+ *		Grade: 15%
+ *
+ *		Sandy Cheeks
+ *		Grade: 99%
+ *
+ *		Plankton
+ *		Grade: 90%
+ *
+ *		Average = 72.25%
+ *		Highest Grade = 99.0%
+ *		Lowest Grade = 15.0%
+ *
+ */

@@ -74,3 +74,28 @@ public class University {
 	}
 
 }
+
+/* Screen Dump
+ * 
+ * 		Enter the Employee Name: Mark
+
+		Enter the Salary: $50000
+		
+		Enter '1' for faculty or '2' for staff: 1
+		
+		Enter the department name: Engineering
+		
+		The employee name is Mark and their salary is $50000.00. They are a faculty employee and part of the Engineering department.
+		
+	or:
+	
+		Enter the Employee Name: Mark
+
+		Enter the Salary: $100000
+		
+		Enter '1' for faculty or '2' for staff: 2
+		
+		Enter the job title: Janitor
+		
+		The employee name is Mark and their salary is $100000.00. They are part of the staff and their job title is: Janitor.
+*/

@@ -54,3 +54,20 @@ public class MyFile_2 {
 	}
 
 }
+
+
+/* Screen Dump:
+ * 
+ * 		New file created!
+ *		Enter '1' to keep file or '2' to delete file
+ *		1
+ *		The file has not been deleted.
+ *
+ * or:
+ * 
+ * 		New file created!
+ *		Enter '1' to keep file or '2' to delete file
+ *		2
+ *		The file has been deleted.
+ * 
+ */

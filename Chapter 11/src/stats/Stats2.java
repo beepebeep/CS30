@@ -165,33 +165,33 @@ public class Stats2 {
 	/*
 	 * Screen Dump:
 	 * 
-	 *  How many students' info do you want to enter?: 5
-		Enter student name: a
-		Enter Score: 43
-		Enter student name: b
-		Enter Score: 43
-		Enter student name: c
-		Enter Score: 66
-		Enter student name: d
-		Enter Score: 98
-		Enter student name: e
-		Enter Score: 76
-		Data written to file
-		
-		a
-		Score: 43.00%
-		b
-		Score: 43.00%
-		c
-		Score: 66.00%
-		d
-		Score: 98.00%
-		e
-		Score: 76.00%
-		
-		Average = 65.20%
-		Highest Grade = 98.00%
-		Lowest Grade = 43.00%
+	 *  	How many students' info do you want to enter?: 5
+	 *		Enter student name: a
+	 *		Enter Score: 43
+	 *		Enter student name: b
+	 *		Enter Score: 43
+	 *		Enter student name: c
+	 *		Enter Score: 66
+	 *		Enter student name: d
+	 *		Enter Score: 98
+	 *		Enter student name: e
+	 *		Enter Score: 76
+	 *		Data written to file
+	 *	
+	 *		a
+	 *		Score: 43.00%
+	 *		b
+	 *		Score: 43.00%
+	 *		c
+	 *		Score: 66.00%
+	 *		d
+	 *		Score: 98.00%
+	 *		e
+	 *		Score: 76.00%
+	 *	
+	 *		Average = 65.20%
+	 *		Highest Grade = 98.00%
+	 *		Lowest Grade = 43.00%
 	 */
 
 }

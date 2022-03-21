@@ -266,3 +266,67 @@ public class Bank {
 	}
 
 }
+
+
+/* Screen Dump:
+ * 
+ * 		Enter your first name: sandeep
+
+		Enter your last name: var
+		
+		Enter your street: 271 Good Lane NW
+		
+		Enter the city: Calgary
+		
+		Enter the province: Alberta
+		
+		Enter the postal code: t3m 2r4
+		
+		Enter account type ('personal' or 'business'): personal
+		
+		Enter the balance of the account: $500
+		
+		________________________________________________________________________________
+		Account name: Sandeep Var
+		Street Address: 271 Good Lane NW, Calgary, Alberta, T3M 2R4
+		
+		Current balance is $500.00
+		Minimum account balance is $100. If balance falls below $100, $2 is charged to the account.
+		
+		Enter '1' to start a deposit, '2' to start a withdrawal, '3' to check account type or '4' to quit: 
+		1
+		Enter amount to deposit: $500
+		
+		________________________________________________________________________________
+		Account name: Sandeep Var
+		Street Address: 271 Good Lane NW, Calgary, Alberta, T3M 2R4
+		
+		Current balance is $1,000.00
+		Minimum account balance is $100. If balance falls below $100, $2 is charged to the account.
+		
+		Enter '1' to start a deposit, '2' to start a withdrawal, '3' to check account type or '4' to quit: 
+		2
+		Enter amount to withdraw: $990
+		Withdrawing $990.00 will result in a charge of $2.00. Enter '1' to continue or '2' to stop.
+		1
+		$2 penalty charged.
+		
+		________________________________________________________________________________
+		Account name: Sandeep Var
+		Street Address: 271 Good Lane NW, Calgary, Alberta, T3M 2R4
+		
+		Current balance is $8.00
+		Minimum account balance is $100. If balance falls below $100, $2 is charged to the account.
+		
+		Enter '1' to start a deposit, '2' to start a withdrawal, '3' to check account type or '4' to quit: 
+		3
+		Account Type: personal
+		________________________________________________________________________________
+		Account name: Sandeep Var
+		Street Address: 271 Good Lane NW, Calgary, Alberta, T3M 2R4
+		
+		Current balance is $8.00
+		Minimum account balance is $100. If balance falls below $100, $2 is charged to the account.
+		
+		Enter '1' to start a deposit, '2' to start a withdrawal, '3' to check account type or '4' to quit: 
+ */

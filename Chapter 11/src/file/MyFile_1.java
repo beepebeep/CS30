@@ -32,3 +32,16 @@ public class MyFile_1 {
 	}
 
 }
+
+/* Screen Dump:
+ * 
+ * 		Enter a file name (try 'hello.txt'): hello.txt
+ *
+ * 		The file exists.
+ * 
+ * or:
+ * 
+ * 		Enter a file name (try 'hello.txt'): goodbye.txt
+ *
+ *		The File does not exist.
+ */
