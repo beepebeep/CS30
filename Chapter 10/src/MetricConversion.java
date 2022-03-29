@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import java.awt.EventQueue;
 import java.awt.event.ActionListener;
@@ -19,7 +20,10 @@ public class MetricConversion {
 	 */
 	private JFrame frmMetricconversion;	
 	public String[] conversions = {"Select a conversion","in to cm", "ft to m","gal to L","lbs to kg"};
-	public JComboBox<String> comboBox = new JComboBox<>(conversions);
+	
+	DefaultComboBoxModel<String> comboModel = new DefaultComboBoxModel<String>(conversions);
+	JComboBox<String> comboBox = new JComboBox<String>(comboModel);
+	
 	public JLabel dispLabel = new JLabel("");
 	public int choiceNum;
 	
