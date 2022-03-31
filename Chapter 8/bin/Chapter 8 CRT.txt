@@ -1,0 +1,19 @@
+1. Classes that are derived from existing classes demonstrate an is-a relationship whereas a has-a relationship is just a reference from one class to 
+   another.
+
+2. All the methods of the base class as well as the derived class.
+
+3. Abstract classes and overriding are similar in that the derived class implements the behaviour of the base method, but they differ because abstract 
+   classes force the behaviour onto the derived class whereas overriding implements it in a way that makes it not a necessity.
+
+4. Abstract classes and interfaces both deal with derived classes but abstract classes allow derived classes to implement their behaviour whereas 
+   interfaces only allow you to set functions for the derived class. 
+
+6. a) doThat() is an abstract method.
+   b) Wo is an interface that can be implemented by other classes. 
+   c) doThat() is implemented in Roo because interfaces cannot be inherited, only implemented. 
+   d) doThat, Bo, doThis, doNow, Roo.
+   e) It overrides the doThis method in Bo. 
+   f) Creates a new Bo object with a value of 1.
+   g) It can, by using ‘super.doThis()’.
+   h) It can, by using ‘super.doThis()’.
