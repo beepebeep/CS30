@@ -25,34 +25,39 @@ public class FindAndReplace {
 		System.out.print("Enter a search word or phrase: ");
 		find = i.next();
 		
-		//System.out.print("Enter a replacement word or phrase: ");
-		//replace = i.next();
+		System.out.print("Enter a replacement word or phrase: ");
+		replace = i.next();
 
+		
+		File f = new File(fileName);
+
+		
+	
+		
 		try 
 		{
-			File f = new File(fileName);
 			in = new FileReader(f);
-			readF = new BufferedReader(in);
-			//out = new FileWriter(f);
-			//writeF = new BufferedWriter(out);
+			readF = new BufferedReader(in);			
+			fileName = fileName.replace(".", "NEW."); //creates a file name for the new file
+			File f2 = new File(fileName);
+			out = new FileWriter(f2);
+			writeF = new BufferedWriter(out);
+			
+			
 			
 			while((n = readF.readLine()) != null)
 			{	
-				o += n;
-				if(n.contains(find))
-				{
-					System.out.println("True");
-					//n.replace(find, replace);
-					//writeF.
-				}
-				else
-				{
-					System.out.println("False");
-				}
+				n =  n.replaceAll(find, replace);
+				
+				writeF.write(n);
+				writeF.newLine();
+			
 			}
-			
-			System.out.println(o);
-			
+		
+			readF.close();
+			in.close();
+			writeF.close();
+			out.close();
 		}
 		catch(IOException e)
 		{
