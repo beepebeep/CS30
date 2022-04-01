@@ -44,14 +44,12 @@ public class FindAndReplace {
 			writeF = new BufferedWriter(out);
 			
 			
-			
 			while((n = readF.readLine()) != null)
 			{	
-				n =  n.replaceAll(find, replace);
+				n = n.replaceAll(find, replace);
 				
 				writeF.write(n);
 				writeF.newLine();
-			
 			}
 		
 			readF.close();
