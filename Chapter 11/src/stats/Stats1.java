@@ -1,3 +1,7 @@
+/*
+ * Purpose: Create a stats application that reads names and scores from the 'test1.dat' file and 
+ * 			displays each name and score. The average, highest and lowest scores are then displayed.
+ */
 package stats;
 
 import java.io.BufferedReader;
@@ -7,6 +11,7 @@ import java.io.IOException;
 
 public class Stats1 {
 
+	/*Initialize variables*/
 	static File f = new File("test1.dat");
 	static FileReader in;
 	static BufferedReader readF;
@@ -15,7 +20,9 @@ public class Stats1 {
 	private static String[] info = new String[8];
 	private static String n;
 	
-	
+	/*
+	 * Get the student info from the file
+	 */
 	public static void getInfo()
 	{
 		try 
@@ -23,9 +30,9 @@ public class Stats1 {
 			in = new FileReader(f);
 			readF = new BufferedReader(in);
 			
-			while((n = readF.readLine()) != null)
+			while((n = readF.readLine()) != null)		//reads each line of the file until the end of the file
 			{
-				info[i] = n;
+				info[i] = n;		//store each piece of info in an array
 				i += 1;
 			}
 		}
@@ -34,7 +41,7 @@ public class Stats1 {
 			System.out.println("Error");
 		}
 		
-		
+		/*Display the formatted info*/
 		System.out.println(info[0].toString() + "\n Grade: " + info[1].toString() + "%");
 		System.out.println("\n" + info[2].toString() + "\n Grade: " + info[3].toString() + "%");
 		System.out.println("\n" + info[4].toString() + "\n Grade: " + info[5].toString() + "%");
@@ -43,7 +50,9 @@ public class Stats1 {
 		calculateAve();
 	} 
 	
-	
+	/*
+	 * Calculate the average
+	 */
 	public static void calculateAve()
 	{
 		g1 = Double.parseDouble(info[1].toString());
@@ -58,6 +67,9 @@ public class Stats1 {
 		high();
 	}
 	
+	/*
+	 * Find the highest grade and display it
+	 */
 	public static void high()
 	{
 		
@@ -83,6 +95,9 @@ public class Stats1 {
 		low();
 	}
 	
+	/*
+	 * Find the lowest grade and display it
+	 */
 	public static void low()
 	{
 		if (g1 < g2 && g1 < g3 && g1 < g4)

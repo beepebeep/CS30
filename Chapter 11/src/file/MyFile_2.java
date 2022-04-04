@@ -1,3 +1,7 @@
+/*
+ * Purpose: Create a MyFile application that creates a file named 'zzz.txt' and then informs the user that the file has been created. 
+ * 			It then asks the user whether to keep or delete the file.
+ */
 package file;
 
 import java.io.File;
@@ -6,11 +10,15 @@ import java.util.Scanner;
 
 public class MyFile_2 {
 	
+	/*Initialize variables*/
 	private static String fileName = "zzz.txt";
 	private static int choice;
 	private static Scanner i = new Scanner(System.in);	
 	static File f = new File(fileName);
 	
+	/*
+	 * Creates the 'zzz.txt' file and displays an error message if there is an error 
+	 */
 	public static void createFile()
 	{		
 		try 
@@ -26,6 +34,9 @@ public class MyFile_2 {
 		keepDelete();
 	}
 	
+	/*
+	 * Ask whether to keep or delete the file
+	 */
 	public static void keepDelete()
 	{
 		System.out.println("Enter '1' to keep file or '2' to delete file");

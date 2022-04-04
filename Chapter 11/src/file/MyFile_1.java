@@ -1,3 +1,7 @@
+/*
+ * Purpose: Create a MyFile application that prompts the user for the name of a file and then displays 
+ * 			a message that indicates whether the file exists or not.
+ */
 package file;
 
 import java.io.File;
@@ -5,9 +9,13 @@ import java.util.Scanner;
 
 public class MyFile_1 {
 
+	/* initialize variables*/
 	private static Scanner i = new Scanner(System.in);	
 	private static String fileName;
 	
+	/*
+	 * Prompt for a file name and check whether it exists
+	 */
 	public static void checkFile()
 	{
 		System.out.print("Enter a file name (try 'hello.txt'): ");

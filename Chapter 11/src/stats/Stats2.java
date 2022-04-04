@@ -1,3 +1,7 @@
+/*
+ * Purpose: Create a Stats application that allows the user to enter the names and grades of the students
+ * 			then creates a file 
+ */
 package stats;
 
 import java.io.BufferedReader;
@@ -12,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Stats2 {
 
-	static File f = new File("test2.dat");
+	/*Initialize variables*/
 	static FileReader in;
 	static FileWriter out;
 	static BufferedReader readF;
@@ -25,19 +29,32 @@ public class Stats2 {
 	private static Scanner s = new Scanner(System.in);	
 	private static DecimalFormat dc = new DecimalFormat("0.00");
 	
+	/*
+	 * Main method, prompt user for the name of the file
+	 */
+	public static void main(String[] args) 
+	{
+		System.out.print("What do you want to name the file?: ");
+		String fileName = s.next(); 
+		File f = new File(fileName);
+		write(f);
+	}
 	
-	public static void write()
+	/*
+	 * Ask for the number of students, the name and score of each student and then write all info to files
+	 */
+	public static void write(File file)
 	{
 		
 		try
 		{
-			out = new FileWriter(f);
+			out = new FileWriter(file);
 			writeF = new BufferedWriter(out);
 			
 			System.out.print("How many students' info do you want to enter? (max 20): ");
 			i = s.nextInt();
 			
-			for (int o = 0; o < i; o++)
+			for (int o = 0; o < i; o++)		//Ask name and score for the number of students requested
 			{
 				System.out.print("Enter student name: ");
 				student = s.next();
@@ -61,21 +78,25 @@ public class Stats2 {
 			System.out.println("Error");
 		}
 		
-		getInfo();
+		getInfo(file);
 	}
 	
-	public static void getInfo()
+	/*
+	 * Read the info from the newly created file
+	 */
+	public static void getInfo(File file)
 	{
 		try 
 		{
-			in = new FileReader(f);
+			in = new FileReader(file);
 			readF = new BufferedReader(in);
 			int o = 0;
-			while((n = readF.readLine()) != null)
+			
+			while((n = readF.readLine()) != null)		//read all lines of the file until the end of the file and save to array
 			{
 				info[o] = n;
 				
-				if (o % 2 == 0)
+				if (o % 2 == 0)		//If the counter is even display the name, and if it is odd display the score
 				{
 					System.out.println(info[o].toString());
 				}
@@ -94,15 +115,17 @@ public class Stats2 {
 		calculateAve();
 	} 
 	
-	
+	/*
+	 * Calculate the average of all the scores
+	 */
 	public static void calculateAve()
 	{	
 		int o = 0;
 		int u = 0;
 		
-		while (info[o] != null)
+		while (info[o] != null)		//reads each index of the array until the end of the array
 		{
-			if(o % 2 == 0)
+			if(o % 2 == 0)		//get the scores from the general info array and save them to an array just for the scores
 			{
 				o++;
 			}
@@ -121,12 +144,16 @@ public class Stats2 {
 		high();
 	}
 	
+	/*
+	 * Find the highest score
+	 */
 	public static void high()
 	{
 		int o = 0;
-		max = scores[0];
+		max = scores[0];		//max value set to the value of the first index of the array
 		
-		while (scores[o] != null)
+		/*Compare max value to each index. If the index > max, the index becomes the new max and the loop continues until the end of the array*/
+		while (scores[o] != null)		
 		{
 			if (scores[o] > max)
 			{
@@ -140,11 +167,15 @@ public class Stats2 {
 		low();
 	}
 	
+	/*
+	 * Find the lowest score
+	 */
 	public static void low()
 	{
 		int o = 0;
-		min = scores[0];
+		min = scores[0];		//min value set to the value of the first index of the array
 		
+		/*Compare min value to each index. If the index < min, the index becomes the new min and the loop continues until the end of the array*/
 		while (scores[o] != null)
 		{
 			if (scores[o] < min)
@@ -157,43 +188,27 @@ public class Stats2 {
 		System.out.println("Lowest Grade = " + dc.format(min) + "%");
 	}
 	
-	public static void main(String[] args) 
-	{
-		write();
-	}
-	
 	
 	
 	/*
 	 * Screen Dump:
 	 * 
-	 *  	How many students' info do you want to enter?: 5
-	 *		Enter student name: a
-	 *		Enter Score: 43
-	 *		Enter student name: b
-	 *		Enter Score: 43
-	 *		Enter student name: c
-	 *		Enter Score: 66
-	 *		Enter student name: d
-	 *		Enter Score: 98
-	 *		Enter student name: e
-	 *		Enter Score: 76
-	 *		Data written to file
-	 *	
-	 *		a
-	 *		Score: 43.00%
-	 *		b
-	 *		Score: 43.00%
-	 *		c
-	 *		Score: 66.00%
-	 *		d
-	 *		Score: 98.00%
-	 *		e
-	 *		Score: 76.00%
-	 *	
-	 *		Average = 65.20%
-	 *		Highest Grade = 98.00%
-	 *		Lowest Grade = 43.00%
+	 *  	What do you want to name the file?: Testing.dat
+			How many students' info do you want to enter? (max 20): 2
+			Enter student name: a
+			Enter Score: 55
+			Enter student name: b
+			Enter Score: 95
+			Data written to file
+			
+			a
+			Score: 55.00%
+			b
+			Score: 95.00%
+			
+			Average = 75.00%
+			Highest Grade = 95.00%
+			Lowest Grade = 55.00%
 	 */
 
 }
