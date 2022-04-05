@@ -1,0 +1,15 @@
+1. Data in memory cannot be called a file. A file is data that is stored on a hard drive or solid state drive. 
+
+2. import java.io.File;
+
+3. \ alone is an escape character and \\ should be used in a directory instead.
+
+4. a) catch statements are used to write an exception handler.
+   
+   b) catch(IOException e)
+      {
+	  System.out.println("Error! Specified file name cannot be used to create a file!");
+      {
+
+5. a) The name of the stream for displaying error messages is 'System.err'.
+   b) The messages are displayed in the console. 
