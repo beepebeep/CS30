@@ -56,11 +56,13 @@ public class FindAndReplace {
 				writeF.write(n);
 				writeF.newLine();
 			}
-		
+			
+			System.out.println("Replaced! " + fileName + (" created!"));
 			readF.close();
 			in.close();
 			writeF.close();
 			out.close();
+			
 		}
 		catch(IOException e)
 		{
@@ -74,6 +76,7 @@ public class FindAndReplace {
  * 		Enter the file name: Words.txt
 		Enter a search word or phrase: the
 		Enter a replacement word or phrase: yup
+		Replaced! WordsNEW.txt created!
  * 
  */
  
