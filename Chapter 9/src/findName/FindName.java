@@ -3,7 +3,8 @@ package findName;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class FindName {
+public class FindName 
+{
 
 	private static Scanner s = new Scanner(System.in);
 	private static int numNames, location;
@@ -27,7 +28,9 @@ public class FindName {
 		searchName = s.next();
 		
 		location = Search.linear(names, searchName);
+		System.out.println(location);
 		
+		/*
 		if (location == -1)
 		{
 			System.out.println("Name not found in array");
@@ -35,7 +38,7 @@ public class FindName {
 		else
 		{
 			System.out.println("The name is in index: " + location);
-		}
+		}*/
 		
 		s.close();
 		//System.out.println(Arrays.toString(names));

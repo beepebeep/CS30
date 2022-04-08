@@ -1,5 +1,7 @@
 package findName;
 
+import java.util.Arrays;
+
 /*
  * Search.java
  */
@@ -30,22 +32,23 @@ package findName;
 	
 	public static int linear(String[] sArray, String stringToFind)
 	{
-		int i = 0;
+		boolean check;
+		//System.out.println(stringToFind);
+		//System.out.print(Arrays.toString(sArray));
 		
-		while ((sArray[i] != stringToFind) && (i < sArray.length - 1))
-		{
-			i++;
-		}
+		System.out.println(sArray.length);
 		
-		if (sArray[i] == stringToFind)
+		for(int i = 0; i < sArray.length; i++)
 		{
-			return(i);
+			if (sArray[i] == stringToFind)
+			{
+				check = true; 
+			}
 		}
-		else
-		{
-			return(-1);
-		}
-
+		return(1);
+		//for(int i = 0)
+		
+		
 	}
 		
 }
