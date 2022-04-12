@@ -32,23 +32,17 @@ import java.util.Arrays;
 	
 	public static int linear(String[] sArray, String stringToFind)
 	{
-		boolean check;
-		//System.out.println(stringToFind);
-		//System.out.print(Arrays.toString(sArray));
+		int i = 0;
 		
-		System.out.println(sArray.length);
-		
-		for(int i = 0; i < sArray.length; i++)
-		{
-			if (sArray[i] == stringToFind)
-			{
-				check = true; 
-			}
+		while (!(sArray[i].equals(stringToFind)) && (i < sArray.length - 1)) {
+			i += 1;
 		}
-		return(1);
-		//for(int i = 0)
 		
-		
+		if (sArray[i].equals(stringToFind)) {
+			return(i);
+		} else {
+			return(-1);
+		}
 	}
 		
 }
