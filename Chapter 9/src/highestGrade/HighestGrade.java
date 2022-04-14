@@ -7,12 +7,14 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.Timer;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Handler;
 import java.awt.event.ActionEvent;
-import javax.swing.UIManager;
 
 public class HighestGrade {
 
@@ -21,6 +23,7 @@ public class HighestGrade {
 	private JTextField gradeText;
 	JLabel gradeLabel = new JLabel("Enter the first grade:");
 	JButton enterGrade = new JButton("Enter");
+	JButton enterNum = new JButton("Enter");
 	private int numOfGrades, counter = 0;
 	double[] grades = new double[50];
 	
@@ -28,7 +31,8 @@ public class HighestGrade {
 	public void getNumOfGrades()
 	{
 		numOfGrades = Integer.parseInt(numText.getText());
-		//return(numOfGrades);
+		numText.setEnabled(false);
+		enterNum.setEnabled(false);
 		disp();
 	}
 	
@@ -39,7 +43,7 @@ public class HighestGrade {
 		gradeText.setVisible(true);
 	}
 	
-	public void enterGrades()
+	public void enterGrades() throws InterruptedException
 	{
 		
 		System.out.println("counter: " + counter);
@@ -48,21 +52,75 @@ public class HighestGrade {
 		gradeText.setText("");
 		
 		counter++;
-		
-			if (counter != 0)
+	
+			if (counter == 0)
 			{
-				gradeLabel.setText("Enter the next grade:");
+				gradeLabel.setText("Enter the first grade:");
 			}
-			else if (counter != numOfGrades)
+			else if ((counter > 0) && (counter < numOfGrades - 1))
 			{
-				gradeLabel.setText("Enter the last grade:");
+				gradeLabel.setText("Enter the next grade");
 			}
-			 
 			else if (counter == numOfGrades - 1)
 			{
 				gradeLabel.setText("Enter the last grade:");
 			}
-		}	
+			else if (counter == numOfGrades)
+			{
+				gradeText.setVisible(false);
+				enterGrade.setVisible(false);
+				
+				
+				flex();
+			}
+			
+		}
+				
+	public void flex() throws InterruptedException
+	{
+		gradeLabel.setText("Calculating.");
+		
+		
+		Timer timer = new Timer(1000, new ActionListener()
+		{
+				@Override
+				public void actionPerformed( ActionEvent e )
+				{
+					gradeLabel.setText("Calculating..");
+				}
+			} );
+			timer.setRepeats(false);
+			timer.start();
+			
+			gradeLabel.setText("Calculating..");
+			
+			Timer timer2 = new Timer(1000, new ActionListener()
+			{
+					@Override
+					public void actionPerformed( ActionEvent e )
+					{
+						gradeLabel.setText("Calculating...");
+					}
+				} );
+				timer.setRepeats(false);
+				timer.start();
+				
+				gradeLabel.setText("Calculating...");
+				
+				Timer timer3 = new Timer(1000, new ActionListener()
+				{
+						@Override
+						public void actionPerformed( ActionEvent e )
+						{
+							gradeLabel.setText("");
+						}
+					} );
+					timer.setRepeats(false);
+					timer.start();
+			
+			
+		}
+		
 	
 	
 	
@@ -106,7 +164,7 @@ public class HighestGrade {
 		panel.add(numText);
 		numText.setColumns(10);
 		
-		JButton enterNum = new JButton("Enter");
+		
 		enterNum.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -134,7 +192,13 @@ public class HighestGrade {
 		gradeText.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				enterGrades();
+				try {
+					enterGrades();
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			
 			}
 		});
 		gradeText.setBounds(10, 190, 610, 20);
@@ -151,7 +215,12 @@ public class HighestGrade {
 		enterGrade.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				enterGrades();
+				try {
+					enterGrades();
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		

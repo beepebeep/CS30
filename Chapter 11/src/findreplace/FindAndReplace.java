@@ -24,7 +24,7 @@ public class FindAndReplace {
 	
 
 	public static void main(String[] args) 
-	{
+	{ 
 		/*Get info*/
 		System.out.print("Enter the file name: ");
 		fileName = i.next();
