@@ -7,25 +7,27 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
-import javax.swing.Timer;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Handler;
+import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.awt.event.ActionEvent;
+
 
 public class HighestGrade {
 
 	private JFrame frmHighestgrade;
 	private JTextField numText;
 	private JTextField gradeText;
-	JLabel gradeLabel = new JLabel("Enter the first grade:");
-	JButton enterGrade = new JButton("Enter");
-	JButton enterNum = new JButton("Enter");
+	public static JLabel gradeLabel = new JLabel("Enter the first grade:");
+	private static JLabel highLabel = new JLabel("The Highest Grade is: ");
+	private JButton enterGrade = new JButton("Enter");
+	private JButton enterNum = new JButton("Enter");
 	private int numOfGrades, counter = 0;
-	double[] grades = new double[50];
+	static double[] grades = new double[50];
+	private static DecimalFormat dc = new DecimalFormat("0.00");
 	
 	
 	public void getNumOfGrades()
@@ -76,53 +78,22 @@ public class HighestGrade {
 			
 		}
 				
+	/**
+	 * @throws InterruptedException
+	 */
 	public void flex() throws InterruptedException
 	{
 		gradeLabel.setText("Calculating.");
-		
-		
-		Timer timer = new Timer(1000, new ActionListener()
-		{
-				@Override
-				public void actionPerformed( ActionEvent e )
-				{
-					gradeLabel.setText("Calculating..");
-				}
-			} );
-			timer.setRepeats(false);
-			timer.start();
-			
-			gradeLabel.setText("Calculating..");
-			
-			Timer timer2 = new Timer(1000, new ActionListener()
-			{
-					@Override
-					public void actionPerformed( ActionEvent e )
-					{
-						gradeLabel.setText("Calculating...");
-					}
-				} );
-				timer.setRepeats(false);
-				timer.start();
-				
-				gradeLabel.setText("Calculating...");
-				
-				Timer timer3 = new Timer(1000, new ActionListener()
-				{
-						@Override
-						public void actionPerformed( ActionEvent e )
-						{
-							gradeLabel.setText("");
-						}
-					} );
-					timer.setRepeats(false);
-					timer.start();
-			
-			
-		}
-		
+		new Dots();
+	}
 	
-	
+	public static void calculate()
+	{
+		Arrays.sort(grades);
+		highLabel.setText("The highest grade is: " + dc.format(grades[grades.length - 1]) + "%");
+		highLabel.setVisible(true);
+		
+	}
 	
 	/**
 	 * Create the application.
@@ -243,7 +214,7 @@ public class HighestGrade {
 		lblNewLabel_1_2_1.setBounds(10, 225, 240, 14);
 		panel.add(lblNewLabel_1_2_1);
 		
-		JLabel highLabel = new JLabel("The Highest Grade is: ");
+		
 		highLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		highLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		highLabel.setBounds(10, 302, 610, 20);
