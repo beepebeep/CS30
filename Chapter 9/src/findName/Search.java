@@ -1,6 +1,5 @@
 package findName;
 
-import java.util.Arrays;
 
 /*
  * Search.java

@@ -1,3 +1,6 @@
+/*
+ * Purpose: Create an application that searches a text file for a search word or phrase and replaces it with a replacement word or phrase.
+ */
 package findName;
 
 import java.util.Scanner;

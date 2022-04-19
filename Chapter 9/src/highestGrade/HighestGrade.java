@@ -75,10 +75,8 @@ public class HighestGrade {
 			
 		}
 				
-	/**
-	 * @throws InterruptedException
-	 */
-	public void flex() throws InterruptedException
+	
+	public void flex()
 	{
 		gradeLabel.setText("Calculating.");
 		new Dots();
