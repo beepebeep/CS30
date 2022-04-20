@@ -1,0 +1,18 @@
+1. The third value of an array is index 2.
+
+2. int[] quantities = new int[20];
+
+3. Double[] heights = new Double[3];
+   heights[0] = 1.65;
+   heights[1] = 2.15;
+   heights[2] = 4.95;
+
+4. Double[] grades = new Double[num];
+
+   for(int i = 0; i < num; i++)
+   {
+	System.out.println(grades[i]);
+   }
+
+5. 
+

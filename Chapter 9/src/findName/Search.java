@@ -1,6 +1,4 @@
 package findName;
-
-
 /*
  * Search.java
  */
@@ -29,6 +27,9 @@ package findName;
 		}
 	}
 	
+	/*
+	 * Search through array and find the value of the the index that matches the given value
+	 */
 	public static int linear(String[] sArray, String stringToFind)
 	{
 		int i = 0;

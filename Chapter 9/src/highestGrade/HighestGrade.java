@@ -1,3 +1,8 @@
+/*
+ * Purpose: Create a HighestGrade application that prompts the user for a number of grades,
+ * 			and stores them in an array. After that, the application then traverses the array
+ * 			to find and display the highest grade.
+ */
 package highestGrade;
 
 import java.awt.EventQueue;
@@ -17,6 +22,7 @@ import java.awt.event.ActionEvent;
 
 public class HighestGrade {
 
+	/*Declare variables*/
 	private JFrame frmHighestgrade;
 	private JTextField numText;
 	private JTextField gradeText;
@@ -28,7 +34,9 @@ public class HighestGrade {
 	static double[] grades = new double[50];
 	private static DecimalFormat dc = new DecimalFormat("0.00");
 	
-	
+	/*
+	 * Ask user how many grades to enter
+	 */
 	public void getNumOfGrades()
 	{
 		numOfGrades = Integer.parseInt(numText.getText());
@@ -37,6 +45,9 @@ public class HighestGrade {
 		disp();
 	}
 	
+	/*
+	 * Make the next tools visible
+	 */
 	public void disp()
 	{
 		gradeLabel.setVisible(true);
@@ -44,9 +55,11 @@ public class HighestGrade {
 		gradeText.setVisible(true);
 	}
 	
-	public void enterGrades() throws InterruptedException
+	/*
+	 * Enter the grades into the array
+	 */
+	public void enterGrades()
 	{
-		
 		System.out.println("counter: " + counter);
 		grades[counter] = Double.parseDouble(gradeText.getText());
 		
@@ -72,16 +85,20 @@ public class HighestGrade {
 				enterGrade.setVisible(false);
 				flex();
 			}
-			
-		}
+	}
 				
-	
+	/*
+	 * Make the dots dance
+	 */
 	public void flex()
 	{
 		gradeLabel.setText("Calculating.");
 		new Dots();
 	}
 	
+	/*
+	 * Calculate and display the highest grade
+	 */
 	public static void calculate()
 	{
 		Arrays.sort(grades);
@@ -158,13 +175,7 @@ public class HighestGrade {
 		gradeText.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				try {
-					enterGrades();
-				} catch (InterruptedException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-			
+				enterGrades();
 			}
 		});
 		gradeText.setBounds(10, 190, 610, 20);
@@ -181,12 +192,7 @@ public class HighestGrade {
 		enterGrade.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				try {
-					enterGrades();
-				} catch (InterruptedException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				enterGrades();
 			}
 		});
 		
