@@ -19,10 +19,10 @@ public class Account {
 	 * post: An account has been created. Balance and 
 	 * customer data has been initialized with parameters.
 	 */
-	public Account(double bal, String fName, String lName, String st, String ct, String pv, String pc)//include street, city, province or state, postal code or zip code
-	 {
+	public Account(double bal, String fName, String lName, String st, String ct, String pv, String pc)
+	{
 		balance = bal;
-		cust = new Customer(fName, lName, st, ct, pv, pc);//this constructor should reflect the new additions above, street, city, province, postal code
+		cust = new Customer(fName, lName, st, ct, pv, pc);
 		acctID = fName.substring(0,1) + lName;
 	}
 	
@@ -83,8 +83,9 @@ public class Account {
 	}
 
 
-	//Create a changeAddress() method that calls the cust object from above in order to change
-	//Street, city, province, postalCode
+	/*
+	 * Calls the customer object from above in order to change street, city, province, postalCode
+	 */
 	public void changeAddress()
 	{
 		cust.changeStreet();
