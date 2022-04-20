@@ -1,5 +1,5 @@
 /*
- * Purpose: 
+ * Purpose: create a LocalBank class to test the functions of the Customer, Account, and Bank classes. 
  */
 package localBank;
 
