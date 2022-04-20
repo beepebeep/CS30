@@ -64,7 +64,6 @@ public class Bank
 		accounts.add(newAcct);						//add account to bank accounts
 		
 		System.out.println("Account created. Account ID is: " + newAcct.getID());
-		input.close();
 	}
 
 	

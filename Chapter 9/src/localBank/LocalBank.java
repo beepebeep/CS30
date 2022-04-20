@@ -58,7 +58,57 @@ package localBank;
 				}
 			}
 		} while (!action.equalsIgnoreCase("Q"));
-		
 		input.close();
 	}
 }
+ 
+ /*Screen Dump:
+  * 
+  * 
+		Deposit\Withdrawal\Check balance
+		Add an account\Remove an account\Modify account
+		Quit
+		
+		Enter choice: a
+		First name: Bob
+		Last name: Marley
+		Street: 123 Smooth Street
+		City: Kingston
+		Province: Alberta
+		Postal Code: T3K4M3
+		Beginning balance: 500
+		Account created. Account ID is: BMarley
+		
+		Deposit\Withdrawal\Check balance
+		Add an account\Remove an account\Modify account
+		Quit
+		
+		Enter choice: c
+		Enter account ID: BMarley
+		BMarley
+		Bob Marley
+		123 Smooth Street, Kingston, Alberta, T3K4M3
+		Current balance is $500.00
+		
+		Deposit\Withdrawal\Check balance
+		Add an account\Remove an account\Modify account
+		Quit
+		
+		Enter choice: d
+		Enter account ID: 
+		BMarley
+		Enter deposit amount: 500
+		BMarley
+		Bob Marley
+		123 Smooth Street, Kingston, Alberta, T3K4M3
+		Current balance is $1,000.00
+		
+		Deposit\Withdrawal\Check balance
+		Add an account\Remove an account\Modify account
+		Quit
+		
+		Enter choice: 
+  * 
+  * 
+  */
+  
