@@ -14,7 +14,9 @@
 	System.out.println(grades[i]);
    }
 
-5. a) 	System.out.println("Enter 'i' to insert a number into the array, any other key to quit.");
+5. a) 	(Test.java in Chapter 9/src)
+
+	System.out.println("Enter 'i' to insert a number into the array or any other key to quit.");
 	choice = input.next();
 		
 	while (choice.equals("i"))
@@ -29,7 +31,7 @@
 			grades[0] = (double) Math.round((Math.random() * 50 + 1));
 				
 			System.out.println(Arrays.toString(grades));
-			System.out.println("Enter 'i' to insert a number into the array, any other key to quit.");
+			System.out.println("Enter 'i' to insert a number into the array or any other key to quit.");
 			choice = input.next();
 	}
 
