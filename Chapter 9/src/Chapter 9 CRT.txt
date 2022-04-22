@@ -35,5 +35,29 @@
 			choice = input.next();
 	}
 
-    b) 
+    b) (Test2.java in Chapter 9/src)
+
+	System.out.println("Enter 'i' to delete a number from the array or any other key to quit.");
+	choice = input.next();
+		
+		while (choice.equals("i"))
+		{
+				while(counter != constant)
+				{
+					grades[counter] = grades[counter + 1];
+					counter++;
+					if(counter == constant)
+					{
+						grades[counter] = null;
+					}
+				}
+				counter = 0;
+				
+				System.out.println(Arrays.toString(grades));
+				System.out.println("Enter 'i' to delete a number from the array or any other key to quit.");
+				choice = input.next();
+		}
+		input.close();
+	}
+		
 
