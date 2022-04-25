@@ -59,5 +59,13 @@
 		}
 		input.close();
 	}
+
+6. Passing an entire array to a method requires an array declaration in the method (int[], String[], double[]), whereas passing a single element only requires 
+the varible declaration(int, string, double).
+
+7. Offset array indexes are required if the range of the data in the array is out of bounds for the length of the array, and allows you to troubleshoot why 
+this issue is occurring.
+
+8. The output displayed by the code is "i".
 		
 
