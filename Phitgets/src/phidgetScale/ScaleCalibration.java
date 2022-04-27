@@ -1,4 +1,4 @@
-package phitgetScale;
+package phidgetScale;
 
 import com.phidget22.*;
 import java.util.Scanner;
