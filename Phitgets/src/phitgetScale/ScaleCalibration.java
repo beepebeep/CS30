@@ -47,3 +47,16 @@ public class ScaleCalibration {
         scan.close();
     }    
 }
+
+/*Screen Dump:
+ * 
+ * 		Make sure nothing is on your scale and press Enter
+
+		Averaging Value...
+		Place a known weight on the scale, type the weight in kilograms and press Enter
+		0.194
+		Averaging Value...
+		Your new slope value is: 23879
+
+ * 
+ */

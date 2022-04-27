@@ -29,7 +29,7 @@ public class PhitgetScale {
 		
 		while(true)
 		{
-			double weight = 23844 * (scale.getVoltageRatio() - offsetValue);
+			double weight = 23879 * (scale.getVoltageRatio() - offsetValue);
 			
 			//weight *= 1000;
 			
@@ -39,3 +39,52 @@ public class PhitgetScale {
 		}
 	}
 }
+
+/* Screen Dump:
+ * 
+		Calculating average offset value...
+		0.000 kg
+		-0.000 kg
+		-0.000 kg
+		-0.000 kg
+		-0.000 kg
+		-0.000 kg
+		-0.000 kg
+		-0.000 kg
+		-0.000 kg
+		-0.000 kg
+		-0.000 kg
+		0.183 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.194 kg
+		0.202 kg
+		0.162 kg
+		0.005 kg
+		-0.001 kg
+		-0.001 kg
+		-0.001 kg
+		-0.001 kg
+		-0.000 kg
+		0.000 kg
+		0.001 kg
+		0.000 kg
+		-0.001 kg
+		-0.000 kg
+		0.000 kg
+  */
