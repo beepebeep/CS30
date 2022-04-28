@@ -2,7 +2,7 @@ package phidgetScale;
 
 import com.phidget22.*;
 
-public class PhitgetScale {
+public class PhidgetScale {
 	
 	public static void main(String[] args) throws Exception
 	{
