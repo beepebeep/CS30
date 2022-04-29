@@ -4,14 +4,17 @@ package phidgetsRover;
 	import com.phidget22.*;
 
 	public class PhidgetsRoverSquare {
+		
+		
+		
+        
 	    public static void main(String[] args) throws Exception {
 
 	        //Connect to wireless rover
 	        Net.addServer("", "192.168.100.1", 5661, "", 0);
 
-	        //Create
-	        DCMotor leftMotors = new DCMotor();
 	        DCMotor rightMotors = new DCMotor();
+	        DCMotor leftMotors = new DCMotor();
 	        DistanceSensor sonar = new DistanceSensor();
 
 	        //Address
@@ -23,55 +26,25 @@ package phidgetsRover;
 	        rightMotors.open(5000);
 	        sonar.open(5000);
 	        
-	        while (true) {
-
-	            System.out.println("Distance: " + sonar.getDistance() + " mm");
+	        
+	        
+	        leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
+	        rightMotors.setAcceleration(rightMotors.getMaxAcceleration());
+	        
+	        DistanceTimer timer = new DistanceTimer();
+	        leftMotors.setTargetVelocity(1);
+	        timer.run();
+	        
+	        if(timer.counter.equals(100))
+	        {
+	        	leftMotors.setTargetVelocity(0);
+	        }
+	        
+	        
+	        
+	        
+	        
+	        
 	            
-	            if (sonar.getDistance() < 250) {
-	                //Object detected! Stop motors
-	                leftMotors.setTargetVelocity(0);
-	                rightMotors.setTargetVelocity(0);
-	                
-	                Thread.sleep(1000);
-	                
-	                leftMotors.setTargetVelocity(1);
-	                rightMotors.setTargetVelocity(1);
-	                
-	                Thread.sleep(500);
-	                
-	                leftMotors.setTargetVelocity(0);
-	                rightMotors.setTargetVelocity(0);
-	                
-	                Thread.sleep(1000);
-	                
-	                leftMotors.setTargetVelocity(1);
-	    	        rightMotors.setTargetVelocity(-1);
-	    	        
-	    	        Thread.sleep(500);
-	    	        
-	    	        leftMotors.setTargetVelocity(-0.5);
-	                rightMotors.setTargetVelocity(-0.5);
-	    	        
-	    	        Thread.sleep(1000);
-	    	        
-	    	        leftMotors.setTargetVelocity(0);
-	                rightMotors.setTargetVelocity(0);
-	                
-	                Thread.sleep(1000);
-	    	        
-	    	        leftMotors.setTargetVelocity(-1);
-	    	        rightMotors.setTargetVelocity(1);
-	    	        
-	    	        Thread.sleep(300);
-	                
-	            } else {
-	                //Move forward slowly (25% max speed)
-	                leftMotors.setTargetVelocity(-0.5);
-	                rightMotors.setTargetVelocity(-0.5);
-	            }
-
-	            //Wait for 100 milliseconds
-	            Thread.sleep(100);
 	    }
-	   }
 	}

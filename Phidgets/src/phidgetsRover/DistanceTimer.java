@@ -13,13 +13,14 @@ public class DistanceTimer extends TimerTask
 	/*Declare Variables*/
 	Double counter = 0.00;
 	Timer timer = new Timer();
+	PhidgetsRoverSquare rover = new PhidgetsRoverSquare();
 	
 	/*
 	 * Create a new timer
 	 */
 	public DistanceTimer()
 	{
-		timer.scheduleAtFixedRate(this, 1000, 1000);
+		timer.scheduleAtFixedRate(this, 1000, 1);
 	}
 	
 	/*
@@ -27,13 +28,10 @@ public class DistanceTimer extends TimerTask
 	 */
 	public void run()
 	{
-		System.out.println(counter);
-		counter += 66.666666666;
 		
-		if (counter == 100)
-		{
-			timer.cancel();
-		}
+		System.out.println(counter);
+		counter += 0.0496694491;
+		
 	}
 	
 }
