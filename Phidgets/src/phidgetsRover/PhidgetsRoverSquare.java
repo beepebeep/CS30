@@ -4,17 +4,16 @@ package phidgetsRover;
 	import com.phidget22.*;
 
 	public class PhidgetsRoverSquare {
-		
-		
-		
-        
-	    public static void main(String[] args) throws Exception {
-
-	        //Connect to wireless rover
+	
+		public static void move() throws Exception
+		{
+			DistanceTimer timer = new DistanceTimer();
+			DCMotor rightMotors = new DCMotor();
+		    DCMotor leftMotors = new DCMotor();
+			//Connect to wireless rover
 	        Net.addServer("", "192.168.100.1", 5661, "", 0);
 
-	        DCMotor rightMotors = new DCMotor();
-	        DCMotor leftMotors = new DCMotor();
+	       
 	        DistanceSensor sonar = new DistanceSensor();
 
 	        //Address
@@ -26,25 +25,84 @@ package phidgetsRover;
 	        rightMotors.open(5000);
 	        sonar.open(5000);
 	        
-	        
-	        
-	        leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
-	        rightMotors.setAcceleration(rightMotors.getMaxAcceleration());
-	        
-	        DistanceTimer timer = new DistanceTimer();
-	        leftMotors.setTargetVelocity(1);
+	       
 	        timer.run();
 	        
-	        if(timer.counter.equals(100))
-	        {
-	        	leftMotors.setTargetVelocity(0);
-	        }
+	        leftMotors.setTargetVelocity(-1);
+	        rightMotors.setTargetVelocity(-1);
 	        
+	        Thread.sleep(1800);
 	        
+	        leftMotors.setTargetVelocity(0);
+	        rightMotors.setTargetVelocity(0);
 	        
+	        Thread.sleep(250);
 	        
+	        leftMotors.setTargetVelocity(0.5);
+	        rightMotors.setTargetVelocity(-0.5);
 	        
+	        Thread.sleep(1300);
 	        
-	            
+	        leftMotors.setTargetVelocity(0);
+	        rightMotors.setTargetVelocity(0);
+	        
+	        Thread.sleep(1000);
+	        
+	        leftMotors.setTargetVelocity(-1);
+	        rightMotors.setTargetVelocity(-1);
+	        
+	        Thread.sleep(1800);
+	        
+	        leftMotors.setTargetVelocity(0);
+	        rightMotors.setTargetVelocity(0);
+	        
+	        Thread.sleep(250);
+	        
+	        leftMotors.setTargetVelocity(0.5);
+	        rightMotors.setTargetVelocity(-0.5);
+	        
+	        Thread.sleep(1300);
+	        
+	        leftMotors.setTargetVelocity(0);
+	        rightMotors.setTargetVelocity(0);
+	        
+	        Thread.sleep(1000);
+	        
+	        leftMotors.setTargetVelocity(-1);
+	        rightMotors.setTargetVelocity(-1);
+	        
+	        Thread.sleep(1800);
+	        
+	        leftMotors.setTargetVelocity(0);
+	        rightMotors.setTargetVelocity(0);
+	        
+	        Thread.sleep(250);
+	        
+	        leftMotors.setTargetVelocity(0.5);
+	        rightMotors.setTargetVelocity(-0.5);
+	        
+	        Thread.sleep(1300);
+	        
+	        leftMotors.setTargetVelocity(0);
+	        rightMotors.setTargetVelocity(0);
+	        
+	        Thread.sleep(1000);
+	        
+	        leftMotors.setTargetVelocity(-1);
+	        rightMotors.setTargetVelocity(-1);
+	        
+	        Thread.sleep(1800);
+	        
+	        leftMotors.setTargetVelocity(0);
+	        rightMotors.setTargetVelocity(0);
+	        
+	        Thread.sleep(250);
+	        
+	        timer.cancel();
+		}
+	    public static void main(String[] args) throws Exception {
+
+	        move();
+	        
 	    }
 	}

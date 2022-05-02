@@ -7,13 +7,15 @@ package phidgetsRover;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.phidget22.PhidgetException;
 
-public class DistanceTimer extends TimerTask 
+
+public class DistanceTimer extends TimerTask
 {
 	/*Declare Variables*/
 	Double counter = 0.00;
 	Timer timer = new Timer();
-	PhidgetsRoverSquare rover = new PhidgetsRoverSquare();
+	//PhidgetsRoverSquare rover = new PhidgetsRoverSquare();
 	
 	/*
 	 * Create a new timer
@@ -28,9 +30,6 @@ public class DistanceTimer extends TimerTask
 	 */
 	public void run()
 	{
-		
-		System.out.println(counter);
-		counter += 0.0496694491;
 		
 	}
 	
