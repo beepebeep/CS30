@@ -26,20 +26,8 @@ package phidgetsRover;
 	        leftMotors.open(5000);
 	        rightMotors.open(5000);
 	        sonar.open(5000);
-	        
-	        while (distanceCounter <= 100)
-	        {
-	        	leftMotors.setTargetVelocity(-1);
-		        rightMotors.setTargetVelocity(-1);
-		        
-		        Thread.sleep(2000);
-	        }
-	       
-	        
-	        
-	        //Thread.sleep(1000);
-	        
-	       /* while (true) {
+	     
+	       while (true) {
 
 	            System.out.println("Distance: " + sonar.getDistance() + " mm");
 	            
@@ -58,12 +46,22 @@ package phidgetsRover;
 	                leftMotors.setTargetVelocity(-1);
 	                rightMotors.setTargetVelocity(1);
 	                
-	                Thread.sleep(500);
+	                Thread.sleep(400);
 	                
 	                leftMotors.setTargetVelocity(0);
 	                rightMotors.setTargetVelocity(0);
 	                
 	                Thread.sleep(1000);
+	                
+	                leftMotors.setTargetVelocity(-1);
+	                rightMotors.setTargetVelocity(-1);
+	                
+	                Thread.sleep(600);
+	                
+	                leftMotors.setTargetVelocity(1);
+	                rightMotors.setTargetVelocity(-1);
+	                
+	                Thread.sleep(500);
 	                
 	            } else {
 	                //Move forward slowly (25% max speed)
@@ -72,7 +70,8 @@ package phidgetsRover;
 	            }
 
 	            //Wait for 100 milliseconds
-	            Thread.sleep(100); */
+	            Thread.sleep(100);
 	    }
 	   }
+	}
 
