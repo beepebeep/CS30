@@ -3,7 +3,7 @@ package phidgetsRover;
 	//Add Phidgets Library
 	import com.phidget22.*;
 
-	public class PhidgetsRover2 {
+	public class PhidgetsRoverAcceleration {
 	    public static void main(String[] args) throws Exception 
 	    {
 
@@ -14,7 +14,7 @@ package phidgetsRover;
 	        DCMotor leftMotors = new DCMotor();
 	        DCMotor rightMotors = new DCMotor();
 
-	      //Address
+	        //Address
 	        leftMotors.setHubPort(5);
 	        leftMotors.setChannel(0);
 	        rightMotors.setHubPort(5);
