@@ -39,7 +39,6 @@ package phidgetsRover;
 	        leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
 	        rightMotors.setAcceleration(rightMotors.getMaxAcceleration());
 	
-	        //Use your Phidgets
 			        
 	        while(true)
 	        {
@@ -65,8 +64,6 @@ package phidgetsRover;
 			            
 		        //Wait 100 milliseconds
 		        Thread.sleep(100);
-			   
-		        //System.out.println("Distance: " + sonar.getDistance() + " mm");
 				            
 		        if (sonar.getDistance() < 300)
 		        {
@@ -81,7 +78,6 @@ package phidgetsRover;
 				                
 		        	Thread.sleep(500);
 		        } 
-		        
 		        
 		        if (button.getState())
 		        {
