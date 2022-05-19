@@ -6,18 +6,39 @@ public class PhidgetsPlant {
 
 	public static void main(String[] args) throws Exception {
 		 
-        //Create
+		
+		//Create
+        DigitalOutput pump = new DigitalOutput();
         VoltageRatioInput soil = new VoltageRatioInput();
         
+        //Address
+        pump.setHubPort(1);
+        pump.setIsHubPortDevice(true);
+        
         //Open
+        pump.open(1000);
         soil.open(1000);
         
         //Use your Phidgets
-        while(true){
-            System.out.println("Soil Moisture Level: " + soil.getVoltageRatio());
-            Thread.sleep(100);
-        }
+        double S;
 
+        while(true)
+        {
+        	
+        	S = soil.getVoltageRatio();
+        	
+        	if (S < 0.700)
+        	{
+        		
+            	pump.setState(true);
+            	Thread.sleep(5000);
+            	pump.setState(false);
+            }
+        	
+        	Thread.sleep(500);	
+        }
+        
+        
 	}
 
 }
