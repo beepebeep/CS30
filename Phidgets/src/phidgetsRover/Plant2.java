@@ -1,5 +1,10 @@
 package phidgetsRover;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import com.phidget22.*;
+
 public class Plant2 {
 
 	 public static void main(String[] args) throws Exception 
@@ -30,10 +35,10 @@ public class Plant2 {
 	     
 			 Date date = new Date(); 
 	        	double L =light.getIlluminance();
-	        	S = soil.getVoltageRatio();
+	        	double S = soil.getVoltageRatio();
 	 	        String ll="Light Status: Low", lh= "Light Status: High",lg= "Light Status: Good",
 	 	        		sd="Plant Status: Needs Watering\n",sw="Plant Status: Good\n",
-	 	        		t = ti.format(date), wt ="13:40";
+	 	        		t = ti.format(date), wt ="10:55";
 	 	        
 	        	// light level ---------------
 	        	if (L < 2) 
@@ -59,10 +64,10 @@ public class Plant2 {
 	        		System.out.println(t);	
 	        		
 	        		
-	        		  pump.setState(true);
-	      	          Thread.sleep(2000);
-	      	          pump.setState(false);
-	      	        if (S<148) 
+	        		  //pump.setState(true);
+	      	          //Thread.sleep(2000);
+	      	          //pump.setState(false);
+	      	        if (S<0.355) 
 		        	{
 		        		System.out.println(sd);	
 		        		
