@@ -2,7 +2,6 @@ package phidgetsRover;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import com.phidget22.*;
 
 public class PhidgetsPlant 
@@ -10,6 +9,8 @@ public class PhidgetsPlant
 
 	public static void main(String[] args) throws Exception 
 	{
+		Net.addServer("", "192.168.100.1", 5661, "", 0);
+		
 		//Create
         DigitalOutput pump = new DigitalOutput();
         VoltageRatioInput soil = new VoltageRatioInput();
@@ -30,7 +31,7 @@ public class PhidgetsPlant
         {
         	Date date = new Date();
         	double S = soil.getVoltageRatio();
-        	String time = timeSet.format(date), waterTime = "11:42";
+        	String time = timeSet.format(date), waterTime = "11:11";
         	
         	System.out.print(time + " - ");
 
