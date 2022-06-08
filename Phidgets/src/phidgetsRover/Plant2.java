@@ -9,6 +9,7 @@ public class Plant2 {
 
 	 public static void main(String[] args) throws Exception 
 	  {
+		    Net.addServer("", "192.168.100.1", 5661, "", 0);
 	        //Create
 	        VoltageRatioInput soil = new VoltageRatioInput();
 	        DigitalOutput pump = new DigitalOutput();
@@ -17,6 +18,10 @@ public class Plant2 {
 	        //Address
 	        pump.setHubPort(1);
 	        pump.setIsHubPortDevice(true);
+	        soil.setHubPort(0);
+	        soil.setIsHubPortDevice(true);
+	        light.setHubPort(2);
+	        
 	        
 	        //Open
 	        soil.open(1000);
@@ -38,7 +43,7 @@ public class Plant2 {
 	        	double S = soil.getVoltageRatio();
 	 	        String ll="Light Status: Low", lh= "Light Status: High",lg= "Light Status: Good",
 	 	        		sd="Plant Status: Needs Watering\n",sw="Plant Status: Good\n",
-	 	        		t = ti.format(date), wt ="10:55";
+	 	        		t = ti.format(date), wt ="9:13";
 	 	        
 	        	// light level ---------------
 	        	if (L < 2) 
@@ -64,9 +69,9 @@ public class Plant2 {
 	        		System.out.println(t);	
 	        		
 	        		
-	        		  //pump.setState(true);
-	      	          //Thread.sleep(2000);
-	      	          //pump.setState(false);
+	        		  pump.setState(true);
+	      	          Thread.sleep(2000);
+	      	          pump.setState(false);
 	      	        if (S<0.355) 
 		        	{
 		        		System.out.println(sd);	

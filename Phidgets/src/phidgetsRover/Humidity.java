@@ -10,13 +10,12 @@ public class Humidity
 	{
 		Net.addServer("", "192.168.100.1", 5661, "", 0);
 		
-		 //Create 
+		//Create 
         DigitalInput redButton = new DigitalInput();
         DCMotor leftMotors = new DCMotor();
         DCMotor rightMotors = new DCMotor();
         VoltageRatioInput vAxis = new VoltageRatioInput(); 
         VoltageRatioInput hAxis = new VoltageRatioInput();
-        DistanceSensor sonar = new DistanceSensor();
         DigitalOutput pump = new DigitalOutput();
         
         //Address 
@@ -35,7 +34,6 @@ public class Humidity
         rightMotors.open(5000);
         vAxis.open(5000);
         hAxis.open(5000);
-        sonar.open(5000);
         pump.open(1000);
 
         //Increase acceleration

@@ -1,13 +1,9 @@
 package phidgetsRover;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.swing.JButton;
+
 
 import com.phidget22.*;
 
@@ -23,9 +19,7 @@ public class PhidgetsPlant
         
         //Address
         pump.setHubPort(1);
-        soil.setHubPort(0);
         pump.setIsHubPortDevice(true);
-        soil.setIsHubPortDevice(true);
         
         //Open
         pump.open(1000);
@@ -39,10 +33,8 @@ public class PhidgetsPlant
         {
         	Date date = new Date();
         	double S = soil.getVoltageRatio();
-        	System.out.println(S);
-        	String time = timeSet.format(date), waterTime = "9:49";
-        	
-        	System.out.print(time + " - ");
+        	String time = timeSet.format(date), waterTime = "10:03";
+        	System.out.print(time + " - " + S + " - ");
 
         	if (S<0.355) 
             {
@@ -54,20 +46,17 @@ public class PhidgetsPlant
             } 
         	
         	if(time.equals(waterTime))
-        	{    	          
-        		if (S<0.355) 
-	            {
-        			System.out.println("Plant Status: Dry");
+        	{    	       
+        		
+        		//if (S<0.355) 
+	           // {
+        			//System.out.println("true");
 	            		
 	    	    	pump.setState(true);
-	          	    Thread.sleep(2000);
-	          	    pump.setState(false);
+	          	   // Thread.sleep(2000);
+	          	   // pump.setState(false);
 	          	          
-	            }
-	      	    else 
-	            {
-	      	    	System.out.println("Plant Status: Wet");	
-	            } 
+	           // }
 	        }
         	 
         	Thread.sleep(500);	
