@@ -5,8 +5,6 @@ package phidgetsRover;
 
 	public class PhidgetsRover {
 	    public static void main(String[] args) throws Exception {
-
-	    	int distanceCounter = 0;
 	    	
 	        //Connect to wireless rover
 	        Net.addServer("", "192.168.100.1", 5661, "", 0);

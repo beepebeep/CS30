@@ -1,9 +1,9 @@
-package phidgetsRover;
+package phidgetsPlant;
 
 import com.phidget22.*;
 
 
-public class Humidity 
+public class PhidgetsRoverThumbstickPlant 
 {
 
 	public static void main(String[] args) throws Exception

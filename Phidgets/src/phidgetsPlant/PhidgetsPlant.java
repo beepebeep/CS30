@@ -1,4 +1,4 @@
-package phidgetsRover;
+package phidgetsPlant;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,7 +11,7 @@ public class PhidgetsPlant
 {	    
 	public static void main(String[] args) throws Exception 
 	{
-		Net.addServer("", "192.168.100.1", 5661, "", 0);
+		//Net.addServer("", "192.168.100.1", 5661, "", 0);
 		
 		//Create
         DigitalOutput pump = new DigitalOutput();
@@ -33,7 +33,7 @@ public class PhidgetsPlant
         {
         	Date date = new Date();
         	double S = soil.getVoltageRatio();
-        	String time = timeSet.format(date), waterTime = "10:03";
+        	String time = timeSet.format(date), waterTime = "11:12";
         	System.out.print(time + " - " + S + " - ");
 
         	if (S<0.355) 
@@ -48,15 +48,13 @@ public class PhidgetsPlant
         	if(time.equals(waterTime))
         	{    	       
         		
-        		//if (S<0.355) 
-	           // {
-        			//System.out.println("true");
-	            		
-	    	    	pump.setState(true);
-	          	   // Thread.sleep(2000);
-	          	   // pump.setState(false);
-	          	          
-	           // }
+        	   if (S<0.355) 
+	           {            		
+        		   pump.setState(true);
+        		   Thread.sleep(2000);
+        		   pump.setState(false);          
+	           }
+        	   
 	        }
         	 
         	Thread.sleep(500);	

@@ -14,14 +14,6 @@ package phidgetsRover;
 	
 			 //Create 
 	        DigitalInput redButton = new DigitalInput();
-
-	        //Address 
-	       
-
-	        //Open 
-	        
-			
-			//Create
 	        DCMotor leftMotors = new DCMotor();
 	        DCMotor rightMotors = new DCMotor();
 	        VoltageRatioInput vAxis = new VoltageRatioInput(); 
@@ -52,8 +44,6 @@ package phidgetsRover;
 	        //Increase acceleration
 	        leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
 	        rightMotors.setAcceleration(rightMotors.getMaxAcceleration());
-	        
-	     
 			        
 	        while(true)
 	        {
@@ -106,9 +96,7 @@ package phidgetsRover;
 		        {
 		        	pump.setState(false);
 		        }
-		        
-		       
-				          
+		               
 	        }
 		
 		}
